@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Product",
+  description: "Product page",
+};
+
 export default async function Product({
   params,
 }: {
