@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { Metadata } from "next";
 
 type Props = {
@@ -22,7 +22,8 @@ export const generateMetadata = async ({
 export default async function ReviewPage({ params }: Props) {
   const { id, reviewId } = await params;
   if (parseInt(reviewId) > 1000) {
-    notFound();
+    // notFound();
+    redirect("/products/1");
   }
   return (
     <h1>
