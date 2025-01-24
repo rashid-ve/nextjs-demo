@@ -1,3 +1,4 @@
+import { cookies } from "next/headers";
 import Link from "next/link";
 
 export default async function NewsArticles({
@@ -7,8 +8,10 @@ export default async function NewsArticles({
   params: Promise<{ articleId: string }>;
   searchParams: Promise<{ lang?: "en" | "fr" }>;
 }) {
+  const cookieStore = await cookies();
   const { articleId } = await params;
   const { lang = "en" } = await searchParams;
+  console.log(cookieStore.get("resultsperpage"));
   return (
     <div>
       <h1>News article {articleId}</h1>

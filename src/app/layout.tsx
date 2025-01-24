@@ -4,6 +4,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import Navigation from "./components/navigation";
 import { Wrapper } from "./wrapper";
+import { ThemeProvider } from "./context/theme-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,17 +33,19 @@ export default function MarketingLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <header className="text-center text-white p-4 bg-slate-900">
-            <Navigation />
-          </header>
-          <Wrapper>{children}</Wrapper>
-          <footer className="text-center text-white p-4 bg-slate-900">
-            <p>This is footer</p>
-          </footer>
-        </body>
+        <ThemeProvider>
+          <body
+            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          >
+            <header className="text-center text-white p-4 bg-slate-900">
+              <Navigation />
+            </header>
+            <Wrapper>{children}</Wrapper>
+            <footer className="text-center text-white p-4 bg-slate-900">
+              <p>This is footer</p>
+            </footer>
+          </body>
+        </ThemeProvider>
       </html>
     </ClerkProvider>
   );
