@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import Slider from "react-slick";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 
 export const ImageSlider = () => {
   const settings = {
@@ -11,7 +11,7 @@ export const ImageSlider = () => {
   };
   return (
     <div className="image-slider-container">
-      <Slider {...settings}>
+      {/* <Slider {...settings}>
         <div>
           <img src="http://picsum.photos/400/200" />
         </div>
@@ -24,7 +24,7 @@ export const ImageSlider = () => {
         <div>
           <img src="http://picsum.photos/400/200" />
         </div>
-      </Slider>
+      </Slider> */}
     </div>
   );
 };

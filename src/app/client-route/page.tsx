@@ -1,3 +1,5 @@
+"use client"
+
 import "client-only";
 import { useTheme } from "../context/theme-provider";
 import { clientSideFunction } from "../utils/client-utils";
